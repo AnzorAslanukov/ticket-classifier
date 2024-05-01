@@ -1,0 +1,35 @@
+Example ticket details
+[Standard] 
+Title: No one hears me during meeting on Teladoc
+Description: I have appointment with patient, they cannot hear me but I can hear them
+Affected user: Emily Robinson
+Alternate contact method: 999-321-4567
+Location: Neuroscience Pavilion - 200 Maple Drive, Franklin City, PA
+
+[High priority]
+Title: Pharmacy Zebra printer is shutting down by itself all of the time
+Description: After a lot of labels are printed, the printer turns itself off 
+Affected user: Aarav Singh
+Alternate contact method: 999-564-7890
+Location: Infectious Disease Lab - 1200 Sycamore Parkway, Franklin City, PA
+
+[Standard priority]
+Title: PET scanner is not aligned correctly
+Description: Images from the scanner are distorted and misaligned 
+Affected user: Sofia Martinez
+Alternate contact method: 999-987-6543
+Location: Cancer Research Institute - 300 Oak Lane, Franklin City, PA
+
+[High priority]
+Title: IntelliVue is not connected to monitoring system
+Description: Patient data is not going into central monitoring system. 
+Affected user: Liam Abdullah
+Alternate contact method: 999-234-5678
+Location: Pediatric Hospital - 700 Walnut Street, Franklin City, PA
+
+[Standard priority]
+Title: Computer keyboard is not working
+Description: I cannot type on my computer, please replace keyboard. 
+Affected user: Chloe Zhao
+Alternate contact method: 999-876-5432
+Location: Liberty Health Downtown Clinic - 2000 Central Plaza, Franklin City, PA
