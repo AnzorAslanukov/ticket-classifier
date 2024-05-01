@@ -1,0 +1,9 @@
+Building Support Groups
+Clinical Engineering (CE) 
+CE services medical devices onsite.
+End User Support (EUS) 
+EUS services onsite computers, printers, monitors, TVs, and standard business IT equipment.
+Facilities
+Facilities services issues dealing with the building itself like plumbing and electrical issues.
+Networking
+Networking team services issues with device communication and computer networks.

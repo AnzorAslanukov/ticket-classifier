@@ -1,0 +1,57 @@
+IT department application / device responsibility and domain: 
+
+Health Informatics:
+Epic Systems
+Cerner
+Allscripts
+
+Cybersecurity:
+Responsible for security across all applications and devices
+
+Network Administration:
+Philips IntelliVue Series
+Medtronic Remote Monitoring Systems
+Telemedicine Platforms (Teladoc, Amwell)
+
+Technical Support:
+General support for all applications and devices
+
+Software Development:
+IBM Watson Health
+SAP Health Engagement
+
+Data Analysis:
+IBM Watson Health
+SAP Health Engagement
+
+System Integration:
+Integration of all applications and devices for seamless operation
+
+User Experience Design:
+Mobile Medical Applications (UpToDate, Medscape)
+Telemedicine Platforms (Teladoc, Amwell)
+
+IT Project Management:
+EHR Systems (Epic, Cerner, Allscripts)
+Da Vinci Surgical System
+
+Telecommunications:
+Telemedicine Platforms (Teladoc, Amwell)
+
+Cloud Services Management:
+Healthcare IT and Data Analysis Tools (IBM Watson Health, SAP Health Engagement)
+Cloud-based EHR Systems (Epic, Cerner, Allscripts)
+
+IT Training and Development:
+Training on new systems and ongoing education for all systems
+
+Hardware Maintenance:
+Medical Imaging Devices (GE MRI Machines, Philips CT Scanners, Siemens PET Scanners)
+Surgical Instruments (Da Vinci Surgical System, Stryker Navigation Systems)
+
+Digital Innovation:
+Wearable Health Technology (Fitbit, Apple Watch)
+Digital aspects of Pharmacy Automation Systems (BD Pyxis MedStation, Omnicell Automated Dispensing Cabinets)
+
+Data Privacy Compliance:
+Ensuring compliance across all applications and devices

@@ -1,0 +1,15 @@
+On-Call IT Department Presence 
+An on-call is someone who works with level 1 or high priority issues. These IT department / teams have a dedicated on-call: 
+Any building EUS, CE, and Networking 
+Health Informatics
+Cybersecurity
+Network Administration
+Software Development
+Data Analysis
+System Integration
+User Experience Design
+IT Project Management
+Telecommunications
+Cloud Services Management
+IT Training and Development
+Hardware Maintenance 

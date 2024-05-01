@@ -1,0 +1,21 @@
+Liberty Health Center Clinical buildings
+Cardiology Tower - 100 Elm Street, Franklin City, PA
+Neuroscience Pavilion - 200 Maple Drive, Franklin City, PA
+Cancer Research Institute - 300 Oak Lane, Franklin City, PA
+Orthopedic Center - 400 Pine Road, Franklin City, PA
+Emergency Medicine Building - 500 Cedar Avenue, Franklin City, PA
+Maternity Ward - 600 Birch Way, Franklin City, PA
+Pediatric Hospital - 700 Walnut Street, Franklin City, PA
+Geriatric Health Facility - 800 Chestnut Place, Franklin City, PA
+Psychiatric Annex - 900 Ash Boulevard, Franklin City, PA
+Rehabilitation & Physical Therapy Center - 1000 Spruce Circle, Franklin City, PA
+Diabetes and Endocrinology Clinic - 1100 Hawthorn Isle, Franklin City, PA
+Infectious Disease Lab - 1200 Sycamore Parkway, Franklin City, PA
+Dermatology Department - 1300 Magnolia Street, Franklin City, PA
+Allergy and Immunology Unit - 1400 Willow Alley, Franklin City, PA
+Dental & Oral Surgery Center - 1500 Poplar Trail, Franklin City, PA
+Liberty Health North Branch - 1600 Northern Passage, Franklin City, PA
+Liberty Health South Branch - 1700 Southern Gate, Franklin City, PA
+Liberty Health East Branch - 1800 Eastern Avenue, Franklin City, PA
+Liberty Health West Branch - 1900 Western Way, Franklin City, PA
+Liberty Health Downtown Clinic - 2000 Central Plaza, Franklin City, PA

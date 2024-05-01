@@ -1,0 +1,6 @@
+Technical Issue Severity Levels
+Technical issues are classified as either being level 1 or level 2 severity issues. 
+Level 1 issues are high priority 
+High priority issues require an on-call to resolve the issue. 
+Level 2 issues are standard priority 
+Standard priority issues go to the ticket queue for their respective IT department 
