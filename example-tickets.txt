@@ -1,4 +1,3 @@
-Example ticket details
 [Standard] 
 Title: No one hears me during meeting on Teladoc
 Description: I have appointment with patient, they cannot hear me but I can hear them
