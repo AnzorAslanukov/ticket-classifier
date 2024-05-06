@@ -8,6 +8,9 @@ from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, SystemMessage
+import pandas as pd
+from datetime import datetime
+from Levenshtein import ratio
 
 #Get the OpenAI API from system Environment Variables
 openai.api_key = os.getenv('OPENAI_API_KEY')
@@ -52,9 +55,9 @@ decision_model = ChatOpenAI(model="gpt-4-turbo")
 
 # Dictionary contains ticket title, description, location
 ticket_details = {
-    "title":"No one hears me during meeting on Teladoc",
-    "description":"I have appointment with patient, they cannot hear me but I can hear them",
-    "location":"Neuroscience Pavilion - 200 Maple Drive, Franklin City, PA"
+    "title":"IntelliVue is not connected to monitoring system",
+    "description":"Patient data is not going into central monitoring system.",
+    "location":"Pediatric Hospital - 700 Walnut Street, Franklin City, PA"
 }
 
 # Query for gpt-4-turbo with ticket details to get decision
@@ -85,9 +88,11 @@ context = "\n\n".join([doc[0].page_content for doc in top_docs])
 # Remove duplicated sentces from context variable
 context = remove_duplicates(context)
 
+'''
 print("Context length:", len(context))
 print("Context word count:", str(len(context.split())))
 print("GPT 4 query length:", len(gpt4_query))
+'''
 
 # Use gpt-4-turbo to make decision for ticket
 gpt4_messages = [
@@ -96,5 +101,61 @@ gpt4_messages = [
 ]
 
 model_decision = decision_model.invoke(gpt4_messages)
+model_decision_content = model_decision.content.lower()
+# print(model_decision_content)
 
-print(model_decision.content)
+# Parse model output into relevant dictionary keys
+parts = model_decision_content.split(", ")
+decision_dict = {
+    "severity": parts[0],
+    "department": parts[1]
+}
+
+def find_assignment_details(ticket_details, decision_dict):
+    if decision_dict["severity"].lower() != "high":
+        return {}  # Only process if severity is 'high'
+
+    # Load the on-call list from CSV
+    df = pd.read_csv("lhc-on-call-list.csv")
+
+    # Ensure all data are treated as strings
+    df['IT Department'] = df['IT Department'].astype(str)
+    df['Building Support Group'] = df['Building Support Group'].astype(str)
+
+    # Prepare to search by concatenating building name and address
+    df['Combined Address'] = df['Building Name'].astype(str) + " " + df['Building Address'].astype(str)
+
+    # Determine current time and decide shift
+    current_time = datetime.now().time()
+    shifts = {
+        "7:00 AM - 3:00 PM": (datetime.strptime("7:00 AM", "%I:%M %p").time(), datetime.strptime("3:00 PM", "%I:%M %p").time()),
+        "3:00 PM - 11:00 PM": (datetime.strptime("3:00 PM", "%I:%M %p").time(), datetime.strptime("11:00 PM", "%I:%M %p").time()),
+        "11:00 PM - 7:00 AM": (datetime.strptime("11:00 PM", "%I:%M %p").time(), datetime.strptime("7:00 AM", "%I:%M %p").time())
+    }
+
+    # Determine current shift based on time
+    current_shift = None
+    for shift, times in shifts.items():
+        start, end = times
+        if start <= current_time <= end or (start > end and (start <= current_time or current_time <= end)):
+            current_shift = shift
+            break
+
+    # Search for a matching row in the dataframe
+    for _, row in df.iterrows():
+        if current_shift == row['On-Call Shift'] and (
+            decision_dict['department'].lower() in [row['IT Department'].lower(), row['Building Support Group'].lower()]) and (
+            ratio(ticket_details['location'].lower(), row['Combined Address'].lower()) > 0.8):  # Adjust similarity threshold as needed
+            # Return assignment details from the matching row
+            return {
+                "location": ticket_details['location'],
+                "support_group": row['Building Support Group'],
+                "shift": row['On-Call Shift'],
+                "contact_number": row['On-Call Phone Number'],
+                "name": row['On-Call Name']
+            }
+    
+    return {}  # Return empty if no match found
+
+assignment_details = find_assignment_details(ticket_details, decision_dict)
+print(assignment_details)
