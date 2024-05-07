@@ -157,5 +157,8 @@ def find_assignment_details(ticket_details, decision_dict):
     
     return {}  # Return empty if no match found
 
-assignment_details = find_assignment_details(ticket_details, decision_dict)
-print(assignment_details)
+if decision_dict["severity"].lower() == "standard":
+    print(f"Ticket priority: {decision_dict["severity"]}\nTicket department: {decision_dict["department"]}")
+else:
+    assignment_details = find_assignment_details(ticket_details, decision_dict)
+    print(assignment_details)
